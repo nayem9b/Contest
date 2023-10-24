@@ -8,10 +8,9 @@ int main()
     {
         scanf("%d", &ar[i]);
     }
-    for (int i = 0; i < n; i++)
+    for (int i = n - 1; i >= 0; i--)
     {
-        printf("%d\n", ar[i]);
+        printf("%d ", ar[i]);
     }
-
     return 0;
 }
