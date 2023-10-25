@@ -2,6 +2,7 @@
   "files.associations": {
     "arrayInput.C": "cpp",
     "array_Input.C": "cpp",
-    "array_of_char.C": "cpp"
+    "array_of_char.C": "cpp",
+    "stdio.h": "c"
   }
 }
