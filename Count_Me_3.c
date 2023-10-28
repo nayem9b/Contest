@@ -2,45 +2,31 @@
 #include <string.h>
 int main()
 {
-    int n;
-    scanf("%d", &n);
-    char ar[] = {0};
-    for (int i = 0; i < n; i++)
+    int t;
+    scanf("%d", &t);
+    for (int i = 0; i < t; i++)
     {
-        scanf("%s", &ar[i]);
-    }
-    for (int i = 0; i < n; i++)
-    {
-        // if (a[i] != 'a' && a[i] != 'e' && a[i] != 'i' && a[i] != 'o' && a[i] != 'u')
-        // {
-        //     vowelCount++;
-        // }
-        printf("%s", ar[i]);
+        char s[10001];
+        scanf("%s", s);
+        int cnt[26] = {0};
+        int smallLetter = 0, capitalLetter = 0, numbers = 0;
+        for (int i = 0; i < strlen(s); i++)
+        {
+            if (s[i] >= '0' && s[i] <= '9')
+            {
+                numbers++;
+            }
+            if (s[i] >= 'a' && s[i] <= 'z')
+            {
+                smallLetter++;
+            }
+            if (s[i] >= 'A' && s[i] <= 'Z')
+            {
+                capitalLetter++;
+            }
+        }
+        printf("%d %d %d \n", capitalLetter, smallLetter, numbers);
     }
 
     return 0;
 }
-
-// #include <stdio.h>
-// #include <string.h>
-// int main()
-// {
-//     char s[100];
-//     scanf("%s", s);
-//     int cnt[26] = {0};
-//     for (int i = 0; i < strlen(s); i++)
-//     {
-//         int value = s[i] - 'a';
-//         cnt[value]++;
-//     }
-//     for (int i = 0; i < strlen(s); i++)
-//     {
-//         int value = s[i] - 97;
-//         if (cnt[value] != 0)
-//         {
-//             printf("%c - %d\n", value + 'a', cnt[value]);
-//         }
-//         cnt[value] = 0;
-//     }
-//     return 0;
-// }
