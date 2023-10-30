@@ -1,9 +1,8 @@
 #include <stdio.h>
 #include <string.h>
-int main()
+
+int is_palindrome(char a[])
 {
-    char a[1001];
-    scanf("%s", a);
     char initital[1001];
     strcpy(initital, a);
     int i = 0, j = strlen(a) - 1;
@@ -18,11 +17,27 @@ int main()
     int v = strcmp(a, initital);
     if (v == 0)
     {
+        return 1;
+    }
+    else
+    {
+        return 0;
+    }
+}
+
+int main()
+{
+    char a[1001];
+    scanf("%s", a);
+    int result = is_palindrome(a);
+    if (result == 1)
+    {
         printf("Palindrome");
     }
     else
     {
         printf("Not Palindrome");
     }
+
     return 0;
 }
