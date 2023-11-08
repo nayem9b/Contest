@@ -1,1 +1,1 @@
- int countT = 0, countP = 0;
+return 0;
