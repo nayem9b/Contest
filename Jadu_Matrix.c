@@ -4,42 +4,42 @@ int main()
 {
     int row, col;
     scanf("%d %d", &row, &col);
-    int a[row][col];
-    int primaryDiagonal = 0, secondaryDiagonal = 0;
+
+    if (row != col)
+    {
+        printf("NO\n");
+        return 0;
+    }
+
+    int matrix[row][col];
+
     for (int i = 0; i < row; i++)
     {
         for (int j = 0; j < col; j++)
         {
-            scanf("%d", &a[i][j]);
+            scanf("%d", &matrix[i][j]);
         }
     }
-    int flag = 1;
+
     for (int i = 0; i < row; i++)
     {
         for (int j = 0; j < col; j++)
         {
-            if (a[i][j] != 1)
+
+            if ((i == j || i + j == row - 1) && matrix[i][j] != 1)
             {
-                primaryDiagonal = 0;
-                break;
+                printf("NO\n");
+                return 0;
             }
-            else if (a[i][j] == 1)
+
+            if (i != j && i + j != row - 1 && matrix[i][j] != 0)
             {
-                primaryDiagonal = 1;
+                printf("NO\n");
+                return 0;
             }
         }
     }
-    if (primaryDiagonal == 1)
-    {
-        printf("Primary matrix");
-    }
-    else if (secondaryDiagonal == 1)
-    {
-        printf("secondary matrix");
-    }
-    else
-    {
-        printf("Jadu");
-    }
+
+    printf("YES\n");
     return 0;
 }
